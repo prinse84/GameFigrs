@@ -12,13 +12,13 @@ class User < ActiveRecord::Base
   
   def team_admin?(team)
      team_role = Membership.find_team_role(id, team)
-     if (team_role.role_id == 1)
-       true
-     else
-       false
-     end
+     # if (team_role.role_id == 1)
+     #   true
+     # else
+     #   false
+     # end
      
-     #team_role.role_id == 1 ? true : false
+     team_role.role_id == 1 ? true : false
    end
    
 end
