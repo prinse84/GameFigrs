@@ -1,0 +1,8 @@
+<p>Create a New Team</p>
+
+<%= form_for @team do |f| %>
+	<%= f.error_messages %>
+	<p><%= f.label :name, 'Enter Team Name' %> <%= f.text_field :name %> <i>Ex: Fuzzy Cheehtahs</i></p>
+	<p><%= f.label :shortname, 'Enter Team Shortname' %> <%= f.text_field :shortname %><i>Used to uniquely identify your team on sportycus. No spaces, only letters numbers, hypens. Your community page will be at shortname.sportycus.com</i></p>
+	<p><%= f.submit 'Continue' %> </p>
+<% end -%>

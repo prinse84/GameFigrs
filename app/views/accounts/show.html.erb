@@ -1,0 +1,7 @@
+<h1><%= @user.email %></h1>
+
+<p>Your Teams:</p>
+<% for team in @teams %>	
+	<p><%= link_to team.name, team %></p>
+<% end %>
+
