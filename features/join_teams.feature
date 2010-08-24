@@ -3,12 +3,10 @@ Feature:Join Teams
 	As a user
 	I want to join a team
 	
-	@show_account
 	Scenario:Show Add Team link
 		Given I am logged in
 		And I am on the users home page
-		# Then I should see "Add Team"
-		Then show me the page
+		Then I should see "Add Team"
 		
 	Scenario:Show Add Team Page
 		Given I am logged in 

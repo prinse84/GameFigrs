@@ -16,6 +16,10 @@ module NavigationHelpers
       new_team_path
     when 'the users home page'
       account_path(@user)
+    when 'the team home page'
+      team_path(@team1)
+    when 'the edit team page'
+      edit_team_path(@team1)
       
       
     # Add more mappings here.

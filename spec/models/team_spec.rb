@@ -59,10 +59,8 @@ describe Team do
     user = Factory(:user)
     team = Factory(:team)
     team.create_admin(user)
-    team.memberships.should eql(1)
+    team.memberships.size.should eql(1)
   end
-  
-
   
   it "should have only one adminstrator" do
      membership = Factory(:membership)

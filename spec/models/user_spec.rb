@@ -10,9 +10,9 @@ describe User do
    end
    
    it "should be an administrator on many teams" do
-     membership = Factory(:membership)
+     membership = Factory(:membership, :role_id => 1)
      team = Factory(:team)
-     membership2 = Factory.build(:membership, :user_id =>membership.user_id, :team_id => team.id)
+     membership2 = Factory.build(:membership, :user_id =>membership.user_id, :team_id => team.id, :role_id => 1)
      membership2.should be_valid
    end   
    

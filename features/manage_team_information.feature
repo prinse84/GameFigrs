@@ -6,34 +6,33 @@ Feature:Manage Team Information
 	Background:Create default roles
 		Given I have membership and administrator roles
 		
-	@wip
 	Scenario: Show My Teams
 		Given I am logged in
 		When I belong to a team
 		And I go to the users home page
 		Then I should see my team
 		And I should see my team role	
-	
+		
 	Scenario:Show My Team Link
 		Given I am logged in
 		When I am a team administrator
-		And I go to the user home page		
+		And I go to the users home page	
 		Then I should see a link to my team
-		
+					
 	Scenario:Show Team Home Page
 		Given I am logged in
 		When I belong to a team
-		And I go to the user home page
+		And I go to the users home page
 		And I click on a team name
 		Then I should be on the team home page
 		And I should see my team
-		
+				
 	Scenario:Show Edit Team Link
 		Given I am logged in
 		When I am a team administrator
 		And I go to the team home page
-		Then I should see "Edit Team"		
-		
+		Then I should see "Edit Team"	
+
 	Scenario:Show Edit Team Form
 		Given I am logged in
 		And I am a team administrator
@@ -43,23 +42,25 @@ Feature:Manage Team Information
 			
 	Scenario:Edit team
 		Given I am logged in
-		And I am a team administrator		
-		When I modify team information
+		And I am a team administrator	
+		When I go to the edit team page	
+		And I modify team information
 		And I press "Save"
 		Then I should see "Team information was successfully updated"
-		And I should go to the team home page				
+		And I should be on the team home page				
 		
 	Scenario:Show Delete team button
 		Given I am logged in
 		And I am a team administrator
-		When I go to the team home page
-		Then I should see "Delete Team" button
-		
+		When I go to the edit team page
+		Then I should see "Delete"
+
+	@wip		
 	Scenario:Delete Team Show Confirmation
 		Given I am logged in
 		And I am a team administrator
-		When I go to the team home page
-		And I hit the "Delete Team" button
+		When I go to the edit team page
+		And I click "Delete Team"
 		Then I should see "Are you sure you want to delete this team?"
 		
 	Scenario: Delete Team

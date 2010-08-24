@@ -1,7 +1,7 @@
 Sportycus::Application.routes.draw do
 
   # get "teams/index"
-  get "teams/show"
+ # get "teams/show"
   #  get "teams/new"
   #  get "teams/edit"
   #  

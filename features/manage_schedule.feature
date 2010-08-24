@@ -1,4 +1,4 @@
-Feature:Manage Roster
+Feature:Manage Schedule
 	In order to maintain a schedule
 	As an administrator
 	I want to manage games

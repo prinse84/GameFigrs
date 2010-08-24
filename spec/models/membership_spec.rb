@@ -20,13 +20,13 @@ describe Membership do
   end
   
   it "should have unique team and user combinations" do
-    membership = Factory(:membership)
+    membership = Factory(:membership, :role_id => 1)
     membership2 = Factory.build(:membership, :user_id => membership.user_id, :team_id => membership.team_id)
     membership2.should_not be_valid
   end
 
   it "should have unique team and user combinations" do
-    membership = Factory(:membership)
+    membership = Factory(:membership, :role_id => 1)
     team1 = Factory(:team)
     membership2 = Factory.build(:membership, :user_id => membership.user_id, :team_id => team1.id)
     membership2.should be_valid

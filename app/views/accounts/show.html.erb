@@ -2,6 +2,7 @@
 
 <p>Your Teams:</p>
 <% for team in @teams %>	
-	<p><%= link_to team.name, team %></p>
+	<% team_role = Membership.find_team_role(current_user, team)%>	
+	<p><%= link_to team.name, team %> <%=h team_role.role.name %> </p>
 <% end %>
 

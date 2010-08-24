@@ -1,2 +1,10 @@
-<h1>Teams#edit</h1>
-<p>Find me in app/views/teams/edit.html.erb</p>
+<p>Edit Team</p>
+
+<%= form_for @team do |f| %>
+	<%= f.error_messages %>
+	<p><%= f.label :name, 'Enter Team Name' %> <%= f.text_field :name %></p>
+	<p><%= f.label :shortname, 'Enter Team Shortname' %> <%= f.text_field :shortname %><i></p>
+	<p><%= f.submit 'Save' %> </p>
+<% end -%>
+
+<%= link_to 'Delete Team', team_path(@team) %>

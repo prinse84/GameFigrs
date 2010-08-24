@@ -2,7 +2,8 @@ class Team < ActiveRecord::Base
   validates_presence_of :name, :shortname
   validates_uniqueness_of :name, :shortname, :case_sensitive => false
   validates_format_of :shortname, :with =>/^\w*$/
-  after_create :create_admin
+  #after_create :create_admin(user)
+  
   
   has_many :memberships
   has_many :users, :through => :memberships
@@ -11,11 +12,9 @@ class Team < ActiveRecord::Base
     team_admin = Membership.find_admin_user(id)
     team_admin_user = team_admin.user_id    
   end
-  
-  private
-  
-  def create_admin
-    memberships.create(:role_id=>1)
+
+  def create_admin(user)
+    memberships.create(:user_id => user, :role_id=>1)
   end
   
 end
