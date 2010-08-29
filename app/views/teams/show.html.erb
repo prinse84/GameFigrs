@@ -3,5 +3,7 @@
 <% if current_user.team_admin?(@team) %>
 	You are the team administrator
 	
-	<%= link_to 'Edit Team', edit_team_path(@team)%>
+	<%= link_to 'Edit Team', edit_team_path(@team) %>
+	<%= link_to 'Add Game', :controller => 'games', :action => 'new', :team_id => @team.id %> 
+	
 <% end %>

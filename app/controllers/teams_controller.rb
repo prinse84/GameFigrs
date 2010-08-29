@@ -36,5 +36,14 @@ class TeamsController < ApplicationController
       render :action => 'edit'
     end
   end
+  
+  def destroy
+    @team = Team.find(params[:id])
+    @account = current_user.id
+    if @team.destroy
+      flash[:notice] = "Team has been successfully deleted."
+      redirect_to(account_url(@account))
+    end
+  end
 
 end

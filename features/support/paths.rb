@@ -20,6 +20,10 @@ module NavigationHelpers
       team_path(@team1)
     when 'the edit team page'
       edit_team_path(@team1)
+    when 'the add game page'
+      new_game_path
+    when 'the game details page'
+      game_path(@game1)
       
       
     # Add more mappings here.

@@ -1,5 +1,13 @@
 Sportycus::Application.routes.draw do
 
+  # get "games/index"
+  # 
+  # get "games/show"
+  # 
+  # get "games/new"
+  # 
+  # get "games/edit"
+
   # get "teams/index"
  # get "teams/show"
   #  get "teams/new"
@@ -8,7 +16,7 @@ Sportycus::Application.routes.draw do
   # get "accounts/index"
  # get "accounts/show"
 
-  resources :teams, :accounts
+  resources :teams, :accounts, :games
   devise_for :users
   
   root :to => "users#index"
@@ -69,5 +77,6 @@ Sportycus::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
+  
 
 end

@@ -19,3 +19,9 @@ Factory.define :membership do |f|
   f.association :team_id, :factory => :team
   f.association :role_id, :factory => :role
 end
+
+Factory.define :game do |f|
+  f.association :team_id, :factory => :team
+  f.game_date '2010-08-24'
+  f.sequence(:opponent_name) {|n| "opponent#{n}"}
+end

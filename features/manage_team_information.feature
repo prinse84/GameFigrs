@@ -54,19 +54,12 @@ Feature:Manage Team Information
 		And I am a team administrator
 		When I go to the edit team page
 		Then I should see "Delete"
-
-	@wip		
-	Scenario:Delete Team Show Confirmation
-		Given I am logged in
-		And I am a team administrator
-		When I go to the edit team page
-		And I click "Delete Team"
-		Then I should see "Are you sure you want to delete this team?"
 		
 	Scenario: Delete Team
 		Given I am logged in 
 		And I am a team administrator
-		When I click the team delete confirmation
+		When I go to the edit team page
+		And I follow "Delete Team"
 		Then I should see "Team has been successfully deleted"
-		And I should be on the user home page
+		And I should be on the users home page
 		

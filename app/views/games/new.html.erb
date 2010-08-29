@@ -1,0 +1,9 @@
+<p>Add a Game</p>
+
+<%= form_for @game do |f| %>
+	<%= f.error_messages %>
+	<p><%= f.label :game_date, 'Date'%> <%= f.text_field :game_date %>
+	<p><%= f.label :opponent_name, 'Opponent' %> <%= f.text_field :opponent_name %></p>
+	<%= f.hidden_field :team_id, :value => @game.team_id %>
+	<p><%= f.submit 'Save' %> </p>
+<% end -%>

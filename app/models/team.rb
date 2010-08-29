@@ -7,6 +7,7 @@ class Team < ActiveRecord::Base
   
   has_many :memberships
   has_many :users, :through => :memberships
+  has_many :games
   
   def get_admin_user
     team_admin = Membership.find_admin_user(id)
